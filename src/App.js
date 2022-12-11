@@ -11,7 +11,7 @@ import NavBar from "./containers/NavBar/NavBar";
 
 function AppRoutes() {
   let routes = useRoutes([
-    { path: "/", element: <HomePage /> },
+    { path: "/info", element: <HomePage /> },
     { path: "/weather", element: <WeatherPage /> },
     { path: "/news", element: <NewsPage /> },
     { path: "/twitter", element: <TwitterPage /> },
