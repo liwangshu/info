@@ -60,23 +60,16 @@ function HomePage() {
     return USTrendsSet[index].url;
   }
 
-  const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState();
 
   useEffect(() => {
     getHotNews();
-    fetch("http://ip-api.com/json")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Fetch weather!");
-        setCity(data.city);
-        fetch(
-          `https://api.openweathermap.org/data/3.0/onecall?lat=${data.lat}&lon=${data.lon}&exclude=minutely,hourly&units=metric&appid=d9f0c2291661f6a6df199e95cd8c39bf`
-        )
-          .then((response2) => response2.json())
-          .then((data2) => {
-            setWeatherData(data2);
-          });
+    fetch(
+      `https://api.openweathermap.org/data/3.0/onecall?lat=40.4324&lon=-79.9247&exclude=minutely,hourly&units=metric&appid=d9f0c2291661f6a6df199e95cd8c39bf`
+    )
+      .then((response2) => response2.json())
+      .then((data2) => {
+        setWeatherData(data2);
       });
   }, []);
 
@@ -105,7 +98,7 @@ function HomePage() {
                 marginTop: "-15%",
               }}
             >
-              {city}
+              Pittsburgh
             </h1>
             <h2 style={{ marginTop: "5%", textAlign: "center" }}>
               <span style={{ color: "grey" }}>
