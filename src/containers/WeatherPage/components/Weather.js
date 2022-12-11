@@ -44,21 +44,17 @@ function Weather() {
   const apiKey = "d9f0c2291661f6a6df199e95cd8c39bf";
 
   function getCurrentLocation() {
-    fetch("http://ip-api.com/json")
-      .then((response) => response.json())
-      .then(data => {
-        setSelected({
-          name: data.city,
-          latitude: data.lat,
-          longitude: data.lon,
-        });
-      });
+    setSelected({
+      name: "Pittsburgh",
+      latitude: 40.4324,
+      longitude: -79.9247,
+    });
   }
 
   function search() {
     let city = document.getElementById('search-text').value;
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
