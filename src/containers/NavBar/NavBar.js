@@ -9,7 +9,7 @@ function NavBar() {
         <div class="container-fluid">
             <a class="navbar-brand" >
                 <img onClick={() => {
-                navigate("../");
+                navigate("../info");
                 }} src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
